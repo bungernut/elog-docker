@@ -25,12 +25,12 @@ docker tag de1lz/elog-docker elog
 Create docker volumes to store the config file and logbooks,
 ```
 docker volume create --name elog_conf
-docker volume create --name logbooks
+docker volume create --name elog_logbooks
 ```
 
 Run the docker image,
 ```
-docker run --name elog --restart always -d -p 8080:8080 -v elog_conf:/etc/elog -v logbooks:/var/lib/elog elog
+docker run --name elog --restart always -d -p 8080:8080 -v elog_conf:/etc/elog -v elog_logbooks:/var/lib/elog elog
 ```
 
 This forwards port 8080 from the container to [localhost:8080](http://localhost:8080)
